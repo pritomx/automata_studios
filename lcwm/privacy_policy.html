@@ -218,6 +218,41 @@
     position:relative;
   }
 
+  .info-table{
+    margin-top:16px;
+    background:var(--paper);
+    border:1.5px solid rgba(47,169,199,0.18);
+    border-radius:16px;
+    overflow:hidden;
+  }
+  .info-row{
+    display:flex;
+    gap:16px;
+    padding:16px 22px;
+    border-bottom:1px solid rgba(47,169,199,0.12);
+    flex-wrap:wrap;
+  }
+  .info-row:last-child{ border-bottom:none; }
+  .info-row:nth-child(odd){ background:#f7fcfd; }
+  .info-label{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:600;
+    color:var(--sky-ink);
+    min-width:140px;
+    font-size:0.95em;
+  }
+  .info-value{
+    color:#3a332c;
+    font-size:0.95em;
+    flex:1;
+  }
+  .info-value a{
+    border-bottom:2px solid rgba(224,67,58,0.25);
+    color:var(--red-deep);
+    font-weight:600;
+  }
+  .info-value a:hover{ color:var(--sky-ink); border-color:var(--sky-deep); }
+
   footer{
     text-align:center;
     padding:50px 20px 60px;
@@ -338,6 +373,21 @@
       <div class="contact-card">
         <p>Questions or suggestions about this Privacy Policy?<br>We'd be glad to hear from you.</p>
         <a class="email" href="mailto:contact.automatastudios@gmail.com">contact.automatastudios@gmail.com</a>
+      </div>
+
+      <div class="info-table">
+        <div class="info-row">
+          <span class="info-label">Developer</span>
+          <span class="info-value">Shahariar Chowdhory, Automata Studios</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Email</span>
+          <span class="info-value"><a href="mailto:contact.automatastudios@gmail.com">contact.automatastudios@gmail.com</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Google Play</span>
+          <span class="info-value"><a href="https://play.google.com/store/apps/dev?id=7177646858487969160" target="_blank" rel="noopener">View Developer Page →</a></span>
+        </div>
       </div>
     </section>
 
