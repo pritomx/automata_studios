@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Learn Chakma With Me — Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* pulled from the mascot + wordmark art */
+    --sky:#5ec9e0;
+    --sky-deep:#2fa9c7;
+    --sky-ink:#0f5169;
+    --sun:#f6a825;
+    --sun-deep:#e8901a;
+    --sunflower-brown:#7a4a26;
+    --red:#e0433a;
+    --red-deep:#b62f28;
+    --ink:#25201c;
+    --cream:#fff8ec;
+    --paper:#fffdf9;
+    --muted:#6b6157;
+    --hair: rgba(224,67,58,0.18);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--cream);}
+
+  body{
+    font-family:'Nunito', sans-serif;
+    color:var(--ink);
+    line-height:1.75;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,.brand{ font-family:'Baloo 2', sans-serif; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(900px 380px at 15% -15%, rgba(255,255,255,0.25), transparent 60%),
+      radial-gradient(700px 340px at 100% 0%, rgba(255,255,255,0.18), transparent 55%),
+      linear-gradient(160deg, var(--sky) 0%, var(--sky-deep) 55%, var(--sky-ink) 130%);
+    padding:56px 24px 130px;
+    text-align:center;
+    overflow:hidden;
+  }
+
+  .hero::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:90px;
+    background:var(--cream);
+    border-radius:50% 50% 0 0 / 100% 100% 0 0;
+    transform:scaleX(1.4);
+  }
+
+  .hero-inner{ position:relative; z-index:2; max-width:720px; margin:0 auto; }
+
+  .crest{
+    width:168px; height:168px;
+    margin:0 auto 60px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:
+      0 0 0 5px rgba(255,255,255,0.9),
+      0 14px 26px rgba(15,81,105,0.4);
+    overflow:hidden;
+  }
+  .crest img{ width:100%; height:100%; object-fit:cover; object-position:center 42%; border-radius:50%; }
+
+  .title-banner{
+    max-width:100%;
+    width:400px;
+    height:auto;
+    margin:0 auto 22px;
+    display:block;
+    filter: drop-shadow(0 4px 10px rgba(15,81,105,0.25));
+  }
+
+  .hero .tagline{
+    color:#083445;
+    background:rgba(255,255,255,0.55);
+    display:inline-block;
+    padding:6px 18px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:0.82em;
+    letter-spacing:0.03em;
+    margin:14px 0 22px;
+  }
+
+  .petals{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    margin:10px 0 22px;
+  }
+  .petals .dot{ width:9px; height:9px; border-radius:50%; }
+  .petals .dot.sun{ background:var(--sun); }
+  .petals .dot.red{ background:var(--red); }
+  .petals .line{ width:56px; height:2px; background:rgba(255,255,255,0.55); border-radius:2px; }
+
+  .effective-pill{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--red);
+    color:#fff5ec;
+    padding:9px 22px;
+    border-radius:999px;
+    font-size:0.78em;
+    letter-spacing:0.04em;
+    font-weight:700;
+    box-shadow:0 10px 20px rgba(182,47,40,0.35);
+  }
+
+  /* ---------- CONTENT ---------- */
+  .wrap{ max-width:760px; margin:0 auto; padding:0 20px; }
+
+  .card{
+    background:var(--paper);
+    margin-top:-70px;
+    position:relative; z-index:3;
+    border-radius:26px;
+    box-shadow:
+      0 30px 60px -24px rgba(122,74,38,0.22),
+      0 2px 8px rgba(122,74,38,0.06);
+    border:2px solid #fff;
+    padding:52px 54px 60px;
+  }
+
+  .intro{ color:var(--muted); font-size:1.03em; }
+
+  section{ margin-top:42px; }
+  section:first-of-type{ margin-top:6px; }
+
+  h2{
+    font-weight:700;
+    font-size:1.4em;
+    color:var(--sky-ink);
+    margin:0 0 14px;
+    display:flex; align-items:center; gap:12px;
+  }
+  h2 .badge{
+    font-family:'Baloo 2', sans-serif;
+    font-size:0.55em;
+    color:#fff;
+    background:linear-gradient(135deg, var(--sun), var(--sun-deep));
+    width:2.1em; height:2.1em;
+    border-radius:14px;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+    font-weight:700;
+    box-shadow:0 6px 12px rgba(232,144,26,0.35);
+    transform:rotate(-6deg);
+  }
+
+  p{ margin:12px 0; color:#3a332c; }
+
+  ul{ padding-left:0; margin:14px 0; list-style:none; }
+  li{ position:relative; padding-left:28px; margin-bottom:10px; color:#3a332c; }
+  li::before{
+    content:"";
+    position:absolute; left:0; top:0.5em;
+    width:11px; height:11px;
+    background: radial-gradient(circle at 35% 30%, var(--sun), var(--sun-deep));
+    border-radius:50%;
+  }
+
+  a{
+    color:var(--red-deep);
+    text-decoration:none;
+    border-bottom:2px solid rgba(224,67,58,0.25);
+    font-weight:600;
+    transition:border-color .2s, color .2s;
+  }
+  a:hover{ color:var(--sky-ink); border-color:var(--sky-deep); }
+
+  .callout{
+    margin-top:16px;
+    background:linear-gradient(135deg, #fff3e0, #fffaf1);
+    border:1.5px solid rgba(246,168,37,0.35);
+    border-left:5px solid var(--sun);
+    border-radius:12px;
+    padding:18px 22px;
+    font-size:0.96em;
+    color:#5a4425;
+  }
+  .callout strong{ color:var(--sky-ink); }
+
+  .contact-card{
+    margin-top:18px;
+    background: linear-gradient(135deg, var(--sky-ink), var(--sky-deep));
+    border-radius:18px;
+    padding:28px 30px;
+    color:#fff;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:20px; flex-wrap:wrap;
+    position:relative;
+    overflow:hidden;
+  }
+  .contact-card::before{
+    content:"";
+    position:absolute; right:-30px; top:-30px;
+    width:120px; height:120px; border-radius:50%;
+    background:radial-gradient(circle, var(--sun) 0%, transparent 70%);
+    opacity:0.5;
+  }
+  .contact-card p{ margin:0; color:rgba(255,255,255,0.85); font-size:0.95em; position:relative; }
+  .contact-card .email{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:1.15em;
+    color:var(--sun);
+    border:none;
+    position:relative;
+  }
+
+  footer{
+    text-align:center;
+    padding:50px 20px 60px;
+    color:var(--muted);
+  }
+  footer .fseal{ width:44px; height:44px; margin:0 auto 12px; opacity:0.9; }
+  footer .fname{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:1.15em;
+    color:var(--sky-ink);
+    margin-bottom:4px;
+  }
+  footer small{ font-size:0.78em; letter-spacing:0.03em; }
+
+  @media (max-width: 560px){
+    .card{ padding:36px 24px 46px; }
+    .hero{ padding:44px 18px 110px; }
+    .title-banner{ width:270px; }
+    .crest{ width:104px; height:104px; }
+    .crest img{ width:78px; height:78px; }
+    .contact-card{ flex-direction:column; align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <img class="title-banner" src="EngLN.png" alt="Learn Chakma With Me">
+    <div class="crest">
+      <img src="new_logo_circle.png" alt="Learn Chakma With Me mascot">
+    </div>
+    <div class="petals">
+      <span class="line"></span><span class="dot sun"></span><span class="dot red"></span><span class="line"></span>
+    </div>
+    <span class="tagline">Privacy Policy</span>
+    <br>
+    <span class="effective-pill">Effective · July 13, 2026</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="card">
+
+    <p class="intro">Automata Studios built <em>Learn Chakma With Me</em> as a free app, offered as-is and without cost. This policy explains how information is collected, used, and protected for anyone who uses the Service.</p>
+
+    <p>By choosing to use our Service, you agree to the collection and use of information in accordance with this policy. We do not use or share your information with anyone except as described here. Terms used in this Privacy Policy carry the same meaning as in our Terms and Conditions.</p>
+
+    <section>
+      <h2><span class="badge">1</span>Information Collection &amp; Use</h2>
+      <p>For a better experience, we may ask you to provide certain personally identifiable information. Anything requested is retained and used strictly as described in this policy. The app also relies on select third-party services that may independently collect information used to identify you.</p>
+      <ul>
+        <li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener">Google Play Services</a> — privacy policy</li>
+        <li><a href="https://unity3d.com/legal/privacy-policy" target="_blank" rel="noopener">Unity</a> — privacy policy</li>
+        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google AdMob</a> — privacy policy</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="badge">2</span>Advertising</h2>
+      <p>We partner with <strong>Google AdMob</strong> to present advertising within the app, including banner and interstitial placements. AdMob may collect your device's advertising identifier, IP address, general location, and app usage patterns, in order to serve relevant ads and measure their performance.</p>
+      <div class="callout">
+        You may limit ad personalization at any time through your device settings — look for <strong>"Opt out of Ads Personalization"</strong> under Android or iOS privacy settings — or through Google's own Ad Settings.
+      </div>
+      <p style="margin-top:20px;">To understand AdMob's data practices in full, we recommend:</p>
+      <ul>
+        <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from partner sites &amp; apps</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="badge">3</span>Log Data</h2>
+      <p>In the event of an in-app error, we collect Log Data through select third-party products. This may include your device's IP address, device name, operating system version, in-app configuration, and the time and date of use — retained solely to diagnose and resolve issues.</p>
+    </section>
+
+    <section>
+      <h2><span class="badge">4</span>Cookies</h2>
+      <p>Cookies are small anonymous identifiers stored on your device. The Service does not use cookies explicitly, but third-party libraries — including advertising partners such as AdMob — may use them to improve their offerings and deliver relevant ads. You are free to accept or decline; declining may limit certain portions of the Service.</p>
+    </section>
+
+    <section>
+      <h2><span class="badge">5</span>Service Providers</h2>
+      <p>We may engage trusted third parties to:</p>
+      <ul>
+        <li>Facilitate and operate the Service</li>
+        <li>Perform Service-related tasks on our behalf</li>
+        <li>Analyze how the Service is used</li>
+        <li>Serve advertisements within the app</li>
+      </ul>
+      <p>These providers are granted access only to perform their assigned tasks, and are contractually bound not to disclose or use your information for any other purpose.</p>
+    </section>
+
+    <section>
+      <h2><span class="badge">6</span>Security</h2>
+      <p>We take reasonable, commercially acceptable measures to protect the information entrusted to us. That said, no method of transmission or storage is entirely secure, and we cannot guarantee absolute protection.</p>
+    </section>
+
+    <section>
+      <h2><span class="badge">7</span>Links to Other Sites</h2>
+      <p>The Service may contain links to other sites, including advertisements. Once you leave our app, you are subject to the privacy practices of that external site — we encourage you to review them, as we have no control over third-party content or policies.</p>
+    </section>
+
+    <section>
+      <h2><span class="badge">8</span>Children's Privacy</h2>
+      <p>Our Service is not directed at anyone under the age of 13, and we do not knowingly collect personal information from children. Should we discover that a child under 13 has provided such information, it is deleted from our servers immediately. Parents or guardians who believe this has occurred are welcome to contact us.</p>
+      <p>Where the app or its advertising may be accessed by children, AdMob placements are configured to align with applicable child-directed advertising requirements, with personalized ads limited or disabled accordingly.</p>
+    </section>
+
+    <section>
+      <h2><span class="badge">9</span>Changes to This Policy</h2>
+      <p>This Privacy Policy may be updated periodically. We recommend reviewing this page from time to time; any changes will be reflected here, effective immediately upon posting.</p>
+    </section>
+
+    <section>
+      <h2><span class="badge">10</span>Contact</h2>
+      <div class="contact-card">
+        <p>Questions or suggestions about this Privacy Policy?<br>We'd be glad to hear from you.</p>
+        <a class="email" href="mailto:contact.automatastudios@gmail.com">contact.automatastudios@gmail.com</a>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<footer>
+  <img class="fseal" src="new_logo_circle.png" alt="">
+  <div class="fname">Learn Chakma With Me</div>
+  <small>&copy; Automata Studios · All rights reserved</small>
+</footer>
+
+</body>
+</html>
