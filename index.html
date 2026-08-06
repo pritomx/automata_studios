@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>~*~ AUTOMATA STUDIOS ~*~ Official HomePage ~*~</title>
+<style>
+  body{
+    background:#000080;
+    background-image: repeating-linear-gradient(45deg, #000080 0 2px, #0000a0 2px 4px);
+    color:#00FF00;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    margin:0;
+    padding:20px;
+    position:relative;
+  }
+  body::before{
+    content:"";
+    position:fixed;
+    top:0; left:0; width:100%; height:100%;
+    pointer-events:none;
+    background-image:
+      radial-gradient(2px 2px at 10% 20%, #fff 100%, transparent 0),
+      radial-gradient(2px 2px at 30% 70%, #fff 100%, transparent 0),
+      radial-gradient(1.5px 1.5px at 50% 15%, #fff 100%, transparent 0),
+      radial-gradient(2px 2px at 70% 40%, #fff 100%, transparent 0),
+      radial-gradient(1.5px 1.5px at 85% 80%, #fff 100%, transparent 0),
+      radial-gradient(2px 2px at 90% 25%, #fff 100%, transparent 0),
+      radial-gradient(1.5px 1.5px at 20% 90%, #fff 100%, transparent 0),
+      radial-gradient(2px 2px at 60% 60%, #fff 100%, transparent 0);
+    animation: twinkle 2s ease-in-out infinite alternate;
+    z-index:0;
+  }
+  .container{ position:relative; z-index:1; }
+  @keyframes twinkle{
+    from{ opacity:0.3; }
+    to{ opacity:1; }
+  }
+  marquee{
+    background:#000;
+    color:#FFFF00;
+    font-weight:bold;
+    font-size:20px;
+    border:4px ridge #C0C0C0;
+    padding:6px;
+  }
+  .container{
+    max-width:820px;
+    margin:20px auto;
+    background:#C0C0C0;
+    border:6px outset #fff;
+    padding:14px;
+    container-type:inline-size;
+    box-shadow: 0 0 0 4px #FF0000;
+    animation: border-cycle 4s linear infinite;
+  }
+  @keyframes border-cycle{
+    0%{ box-shadow: 0 0 0 4px #FF0000; }
+    16%{ box-shadow: 0 0 0 4px #FF7F00; }
+    33%{ box-shadow: 0 0 0 4px #FFFF00; }
+    50%{ box-shadow: 0 0 0 4px #00FF00; }
+    66%{ box-shadow: 0 0 0 4px #00FFFF; }
+    83%{ box-shadow: 0 0 0 4px #FF00FF; }
+    100%{ box-shadow: 0 0 0 4px #FF0000; }
+  }
+  .titlebar{
+    background:linear-gradient(90deg,#000080,#1084d0);
+    color:#fff;
+    font-weight:bold;
+    padding:6px 10px;
+    font-family:Tahoma, sans-serif;
+    font-size:14px;
+    display:flex;
+    justify-content:space-between;
+  }
+  h1{
+    text-align:center;
+    background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #00FFFF, #0000FF, #FF00FF, #FF0000);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow-shift 3s linear infinite;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.35);
+    font-size:2.6em;
+    letter-spacing:2px;
+    margin:16px 0 4px;
+    font-weight:bold;
+  }
+  @keyframes rainbow-shift{
+    0%{ background-position: 0% 50%; }
+    100%{ background-position: 400% 50%; }
+  }
+  .rainbow-text{
+    background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #00FFFF, #0000FF, #FF00FF, #FF0000);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow-shift 2.5s linear infinite;
+    font-weight:bold;
+  }
+  .subtitle{
+    text-align:center;
+    color:#000;
+    border:3px dashed #FF0000;
+    padding:8px;
+    font-weight:bold;
+    margin-bottom:16px;
+    animation: subtitle-flash 1.2s steps(1) infinite;
+  }
+  @keyframes subtitle-flash{
+    0%{ background:#FFFF00; }
+    50%{ background:#00FFFF; }
+    100%{ background:#FFFF00; }
+  }
+  hr{
+    border:none;
+    height:6px;
+    background:repeating-linear-gradient(90deg,#FF0000 0 10px,#FFFF00 10px 20px,#00FF00 20px 30px,#00FFFF 30px 40px,#FF00FF 40px 50px);
+    background-size: 200% 100%;
+    animation: hr-scroll 1.5s linear infinite;
+  }
+  @keyframes hr-scroll{
+    from{ background-position: 0 0; }
+    to{ background-position: -50px 0; }
+  }
+  .content{
+    background:#fff;
+    color:#000;
+    border:4px inset #808080;
+    padding:16px;
+    margin:14px 0;
+  }
+  .content h2{
+    font-size:1.4em;
+    border-bottom:3px double #FF00FF;
+    display:inline-block;
+    animation: h2-color-cycle 3s linear infinite;
+  }
+  @keyframes h2-color-cycle{
+    0%{ color:#800080; }
+    25%{ color:#FF0000; }
+    50%{ color:#0000FF; }
+    75%{ color:#008000; }
+    100%{ color:#800080; }
+  }
+  .blink{ animation: blinker 1s step-start infinite; color:#00FFFF; font-weight:bold; font-size:clamp(1.1em, 4cqi, 1.8em); text-shadow:2px 2px 0 #FF00FF;}
+  @keyframes blinker{ 50%{opacity:0;} }
+
+  table.appstable{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+  }
+  table.appstable td, table.appstable th{
+    border:3px groove #999;
+    padding:10px;
+    vertical-align:top;
+  }
+  table.appstable th{
+    background:#000080;
+    color:#FFFF00;
+    font-family:Tahoma,sans-serif;
+  }
+  .app-icon-img{
+    width:64px; height:64px;
+    image-rendering:pixelated;
+    border:2px solid #000;
+  }
+  .stars{ color:#FF8C00; font-weight:bold; }
+  .visit-btn{
+    display:inline-block;
+    background:#00FF00;
+    border:3px outset #fff;
+    color:#000;
+    font-weight:bold;
+    padding:6px 14px;
+    text-decoration:none;
+    font-family:Tahoma,sans-serif;
+  }
+  .visit-btn:active{ border-style:inset; }
+
+  .guestbook{
+    background:#000;
+    color:#0f0;
+    font-family:"Courier New", monospace;
+    padding:12px;
+    border:3px inset #fff;
+  }
+
+  .badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    justify-content:center;
+    margin:14px 0;
+  }
+  .badge{
+    background:#000;
+    color:#0f0;
+    border:2px solid #fff;
+    font-family:Tahoma, sans-serif;
+    font-size:11px;
+    padding:4px 8px;
+    font-weight:bold;
+    display:inline-block;
+    animation: badge-wiggle 0.6s ease-in-out infinite alternate;
+  }
+  .badge:nth-child(2n){ animation-delay: 0.2s; }
+  .badge:nth-child(3n){ animation-delay: 0.4s; }
+  @keyframes badge-wiggle{
+    from{ transform: rotate(-3deg); }
+    to{ transform: rotate(3deg); }
+  }
+
+  footer{
+    text-align:center;
+    font-size:12px;
+    color:#fff;
+    margin-top:20px;
+  }
+  a.gh { color:#00FFFF; }
+  center img.spin, center span.spin{
+    animation: spin 3s linear infinite;
+    transform-origin:50% 50%;
+    width:1em; height:1em;
+    line-height:1em;
+    text-align:center;
+  }
+
+  @media (max-width:600px){
+    body{ padding:8px; }
+    h1{ font-size:1.8em; }
+    marquee{ font-size:14px; }
+    table.appstable, table.appstable tbody, table.appstable tr, table.appstable td, table.appstable th{
+      display:block;
+      width:100%;
+      box-sizing:border-box;
+    }
+    table.appstable tr{ margin-bottom:10px; border:3px groove #999; }
+    table.appstable td{ border:none; border-top:1px solid #ccc; }
+    table.appstable td:first-child{ border-top:none; }
+    table.appstable th{ display:none; }
+    .app-icon-img{ width:48px; height:48px; }
+  }
+
+  @supports not (font-size: 1cqi){
+    .blink{ font-size:clamp(1.1em, 5vw, 1.8em); }
+  }
+  @keyframes spin{ from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+</style>
+</head>
+<body>
+
+<marquee behavior="scroll" direction="left">*** WELCOME TO THE OFFICIAL AUTOMATA STUDIOS HOMEPAGE *** BEST VIEWED IN NETSCAPE NAVIGATOR *** SOLO DEVELOPER FROM DHAKA, BANGLADESH *** MAKE BEAUTIFUL GAMES AND APPS *** THANKS FOR VISITING ***</marquee>
+<marquee behavior="scroll" direction="right" style="background:#000; border:4px ridge #C0C0C0;"><span class="rainbow-text">★ ☆ NEW APPS COMING SOON ☆ ★ DON'T FORGET TO SIGN THE GUESTBOOK ★ ☆ TELL YOUR FRIENDS ☆ ★</span></marquee>
+
+<div class="container">
+  <div class="titlebar"><span>automata_studios.exe</span><span>[ _ ] [ &#9633; ] [ X ]</span></div>
+
+  <center style="margin-top:20px; margin-bottom:12px;">
+    <!-- LOGO GOES HERE: replace src below with your logo file, e.g. "logo.png" or "logo.gif" -->
+    <img src="logo.png" alt="Automata Studios logo" width="120"
+      onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
+    <div id="logo-fallback" style="display:none; width:120px; height:120px; margin:0 auto; border:3px ridge #fff; background:#000; color:#0f0; font-family:'Courier New',monospace; font-size:11px; align-items:center; justify-content:center; text-align:center;">
+      PUT YOUR<br>LOGO.PNG<br>HERE
+    </div>
+  </center>
+
+  <h1>AUTOMATA STUDIOS</h1>
+  <div class="subtitle">&#9734; SOLO APP &amp; GAME DEVELOPER &#9734; FROM DHAKA, BANGLADESH &#9734; PASSION FOR MAKING BEAUTIFUL GAMES AND APPS &#9734;</div>
+
+<center>
+<span class="spin" style="display:inline-block; font-size:40px;">⭐</span>
+<span class="blink">STRIVING FOR PERFECTION</span>
+<span class="spin" style="display:inline-block; font-size:40px;">⭐</span>
+<br><br>
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Under_construction_graphic.gif" alt="under construction" width="120"
+  onerror="this.style.display='none';">
+</center>
+
+  <hr>
+
+  <div class="content">
+    <h2>&gt;&gt; MY APPS &lt;&lt;</h2>
+    <p>Click below to check out my apps on the Google Play Store!! All made with love by ONE guy. =)</p>
+
+    <table class="appstable">
+      <tr>
+        <th>ICON</th><th>APP NAME</th><th>RATING</th><th>GET IT</th>
+      </tr>
+      <tr>
+        <td>
+          <!-- LOGO: put "chakma-icon.png" next to index.html to use your own icon -->
+          <img class="app-icon-img" src="chakma-icon.png" alt="Learn Chakma With Me icon"
+            onerror="this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';}; this.src='https://play-lh.googleusercontent.com/ykvY_y4H2VE6RfH8WH4pHptAnROQ7eBddiqY5A-ZY931NISubfrnJAXYtrEEexZhT9yMHOQhoW_8a5vQQ4xV=s64';">
+          <div style="display:none; width:64px; height:64px; border:2px solid #000; background:#000; color:#0f0; font-family:'Courier New',monospace; font-size:9px; align-items:center; justify-content:center; text-align:center;">ICON<br>HERE</div>
+        </td>
+        <td><b>Learn Chakma With Me</b><br><span style="font-size:12px;">Learn the basics of Chakma Language easily with the new beautiful Bizu update!</span></td>
+        <td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><br>4.6 (81 reviews)<br>5K+ downloads</td>
+        <td><a class="visit-btn" href="https://play.google.com/store/apps/details?id=com.AutomataStudios.LearnChakmaWithMe">&#9654; INSTALL</a></td>
+      </tr>
+      <tr>
+        <td>
+          <!-- LOGO: put "blockyboi-icon.png" next to index.html to use your own icon -->
+          <img class="app-icon-img" src="blockyboi-icon.png" alt="Blocky Boi icon"
+            onerror="this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';}; this.src='https://play-lh.googleusercontent.com/33m7Kn7fwMgvXUMwdZD5AXbJb6IZDeZxtxeJuJUN3eYc5YiJ0xV5WORt9WPA6NWnhfA=s94';">
+          <div style="display:none; width:64px; height:64px; border:2px solid #000; background:#000; color:#0f0; font-family:'Courier New',monospace; font-size:9px; align-items:center; justify-content:center; text-align:center;">ICON<br>HERE</div>
+        </td>
+        <td><b>Blocky Boi: Unique Puzzle Game</b><br><span style="font-size:12px;">A unique and addicting puzzle game. Give your brain a workout!</span></td>
+        <td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><br>5.0 stars</td>
+        <td><a class="visit-btn" href="https://play.google.com/store/apps/details?id=com.AutomataStudios.blockyboi">&#9654; INSTALL</a></td>
+      </tr>
+      <tr>
+        <td>
+          <!-- LOGO: put "deenclock-icon.png" next to index.html to use your own icon -->
+          <img class="app-icon-img" src="deenclock-icon.png" alt="DeenClock icon"
+            onerror="this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='flex';}; this.src='https://play-lh.googleusercontent.com/yYlO0xBi1wJGjssgCKq6fZSmEPGx3ESYFqw-S1tiD_rFxXXH9pCfjAWo8_5CPvsmJg=s94';">
+          <div style="display:none; width:64px; height:64px; border:2px solid #000; background:#000; color:#0f0; font-family:'Courier New',monospace; font-size:9px; align-items:center; justify-content:center; text-align:center;">ICON<br>HERE</div>
+        </td>
+        <td><b>DeenClock: Be A Better Mu'meen</b><br><span style="font-size:12px;">A helpful companion app for daily prayer and routine.</span></td>
+        <td>New app!</td>
+        <td><a class="visit-btn" href="https://play.google.com/store/apps/details?id=com.automatastudios.deenghori">&#9654; INSTALL</a></td>
+      </tr>
+    </table>
+
+    <center style="margin-top:14px;">
+      <a class="visit-btn" style="background:#FFFF00;" href="https://play.google.com/store/apps/dev?id=7177646858487969160">&#9734;&#9734;&#9734; SEE ALL MY APPS ON GOOGLE PLAY &#9734;&#9734;&#9734;</a>
+    </center>
+  </div>
+
+  <hr>
+
+  <div class="content">
+    <h2>&gt;&gt; ABOUT ME &lt;&lt;</h2>
+    <p>Hiya!! I'm the guy behind <b>Automata Studios</b> :-) I build apps and games all by myself, from idea to code to art to publishing. I live in Dhaka, Bangladesh and I LOVE making stuff that's fun and useful. Check my GitHub for more nerd stuff!</p>
+    <center>
+      <a class="visit-btn" href="https://github.com/pritomx">&#128190; VISIT MY GITHUB &#128190;</a>
+    </center>
+  </div>
+
+  <div class="badges">
+    <span class="badge">MADE WITH<br>NOTEPAD</span>
+    <span class="badge">100%<br>HAND CODED</span>
+    <span class="badge">NO<br>FRAMEWORKS</span>
+    <span class="badge">BEST VIEWED<br>800x600</span>
+    <span class="badge">NO<br>COOKIES TRACKED</span>
+  </div>
+
+  <div class="content guestbook">
+    &gt; Sign my guestbook!! <span class="blink">_</span><br>
+    &gt; "Great apps, 10/10!!" - a happy user<br>
+    &gt; "Learn Chakma app is so cool" - another visitor<br>
+    &gt; "Blocky Boi ate my whole weekend, 5 stars" - sleepy gamer<br>
+    &gt; "finally an app that gets my prayer times right" - DeenClock fan<br>
+    &gt; "ur website is so cool i miss the 2000s" - nostalgic nerd<br>
+    &gt; wanna tell your story or share a message? email me at <a class="gh" href="mailto:contact.automatastudios@gmail.com">contact.automatastudios@gmail.com</a> !!
+  </div>
+
+  <hr>
+
+  <footer>
+    <p>&copy; AUTOMATA STUDIOS &mdash; ALL RIGHTZ RESERVED &mdash; Dhaka, Bangladesh</p>
+    <p><a class="gh" href="https://github.com/pritomx">github.com/pritomx</a> &#12290; <a class="gh" href="https://play.google.com/store/apps/dev?id=7177646858487969160">Google Play</a></p>
+    <p>This page best viewed with cookies enabled and a 56k modem &#128222;&#128190;</p>
+    <p style="font-size:11px;">Follow me on Insta : shahariar.chowdhory &#128172; &mdash; Always up for a good discussion</p>
+  </footer>
+</div>
+
+<canvas id="confetti-canvas" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:9999;"></canvas>
+
+<script>
+  // --- Confetti burst on load, classic 2000s "congrats you visited my site" gimmick ---
+  (function(){
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const colors = ['#FF0000','#FFFF00','#00FF00','#00FFFF','#FF00FF','#FFA500'];
+    let pieces = [];
+    function spawnBurst(count){
+      for(let i=0;i<count;i++){
+        pieces.push({
+          x: Math.random()*canvas.width,
+          y: -20 - Math.random()*canvas.height*0.3,
+          size: 4+Math.random()*6,
+          color: colors[Math.floor(Math.random()*colors.length)],
+          speedY: 2+Math.random()*3,
+          speedX: (Math.random()-0.5)*2,
+          rotation: Math.random()*360,
+          rotSpeed: (Math.random()-0.5)*10
+        });
+      }
+    }
+    spawnBurst(120);
+
+    let running = true;
+    function animate(){
+      if(!running) return;
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      pieces.forEach(p=>{
+        p.y += p.speedY;
+        p.x += p.speedX;
+        p.rotation += p.rotSpeed;
+        ctx.save();
+        ctx.translate(p.x,p.y);
+        ctx.rotate(p.rotation*Math.PI/180);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*0.6);
+        ctx.restore();
+      });
+      pieces = pieces.filter(p=>p.y < canvas.height+30);
+      requestAnimationFrame(animate);
+      if(pieces.length===0) running=false;
+    }
+    animate();
+
+    // Re-trigger a smaller burst on click, because why not
+    document.addEventListener('click', function(){
+      spawnBurst(30);
+      if(!running){ running=true; animate(); }
+    });
+  })();
+
+  // --- Sparkly cursor trail, classic Geocities/Neopets gimmick ---
+  (function(){
+    const sparkles = ['&#10022;','&#10038;','&#9733;','&#10024;'];
+    let last = 0;
+    document.addEventListener('mousemove', function(e){
+      const now = Date.now();
+      if(now - last < 60) return; // throttle
+      last = now;
+      const s = document.createElement('span');
+      s.innerHTML = sparkles[Math.floor(Math.random()*sparkles.length)];
+      s.style.position='fixed';
+      s.style.left = e.clientX+'px';
+      s.style.top = e.clientY+'px';
+      s.style.color = ['#FF00FF','#00FFFF','#FFFF00','#00FF00'][Math.floor(Math.random()*4)];
+      s.style.fontSize = (12+Math.random()*10)+'px';
+      s.style.pointerEvents='none';
+      s.style.zIndex = 9998;
+      s.style.transition = 'transform 0.8s ease-out, opacity 0.8s ease-out';
+      document.body.appendChild(s);
+      requestAnimationFrame(()=>{
+        s.style.transform = `translateY(${20+Math.random()*20}px) rotate(${(Math.random()-0.5)*180}deg)`;
+        s.style.opacity = '0';
+      });
+      setTimeout(()=> s.remove(), 850);
+    });
+  })();
+</script>
+
+</body>
+</html>
