@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bangla Ludu — Terms & Privacy</title>
+<style>
+  :root{
+    --night:#140f4a;
+    --night-2:#24176e;
+    --purple:#4b2a9a;
+    --gold:#f7b51e;
+    --gold-deep:#d98a06;
+    --gold-pale:#ffe7a3;
+    --cream:#fff8e6;
+    --paper:#fbf1d8;
+    --red:#e2393f;
+    --green:#1f9a57;
+    --green-deep:#137544;
+    --ink:#2b1d55;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    font-family: 'Baloo 2','Trebuchet MS',sans-serif;
+    background:
+      radial-gradient(ellipse at top, #3b2aa0 0%, transparent 60%),
+      radial-gradient(ellipse at bottom right, #5a1f7a 0%, transparent 55%),
+      var(--night);
+    color:var(--ink);
+    min-height:100vh;
+  }
+
+  @font-face{
+    font-family:'Baloo 2';
+    src: local('Arial Rounded MT Bold');
+  }
+
+  .hero{
+    text-align:center;
+    padding: 30px 20px 6px;
+  }
+  .hero img{
+    max-width: 420px;
+    width:80%;
+    filter: drop-shadow(0 12px 22px rgba(0,0,0,0.45));
+  }
+  .hero p.tag{
+    margin:4px 0 0;
+    font-size:1.1rem;
+    color:var(--gold-pale);
+    font-weight:700;
+    letter-spacing:0.3px;
+  }
+
+  /* a row of ludo squares in the four colours */
+  .track{
+    height:18px;
+    max-width: 900px;
+    margin: 18px auto 28px;
+    border-radius: 9px;
+    background: repeating-linear-gradient(90deg,
+      var(--red) 0 36px, var(--green) 36px 72px, var(--gold) 72px 108px, #2f7fe0 108px 144px);
+    box-shadow: 0 0 0 3px var(--gold) inset, 0 6px 16px rgba(0,0,0,0.35);
+    opacity:0.95;
+  }
+
+  .tabs{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    max-width:900px;
+    margin: 0 auto 26px;
+    padding: 0 16px;
+    flex-wrap:wrap;
+  }
+  .tab-btn{
+    font-family:inherit;
+    font-weight:800;
+    font-size:1.05rem;
+    padding: 12px 28px;
+    border-radius: 999px;
+    border: 3px solid var(--gold-deep);
+    cursor:pointer;
+    background: linear-gradient(180deg, #3a2a8c, var(--night-2));
+    color: var(--gold-pale);
+    box-shadow: 0 4px 0 var(--gold-deep);
+    transition: transform .12s ease, box-shadow .12s ease;
+  }
+  .tab-btn:hover{ transform: translateY(-2px); }
+  .tab-btn:active{ transform: translateY(2px); box-shadow: 0 1px 0 var(--gold-deep); }
+  .tab-btn.active{
+    background: linear-gradient(180deg, var(--gold), var(--gold-deep));
+    color: var(--night);
+  }
+  .tab-btn.active.privacy{
+    background: linear-gradient(180deg, #2fc07a, var(--green-deep));
+    color:#fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  }
+
+  .board{
+    max-width: 900px;
+    margin: 0 auto 60px;
+    background: linear-gradient(180deg, var(--cream), var(--paper));
+    border: 5px solid var(--gold-deep);
+    border-radius: 22px;
+    padding: 38px 40px 46px;
+    box-shadow:
+      0 0 0 6px var(--night-2),
+      0 18px 34px rgba(0,0,0,0.45);
+    position:relative;
+  }
+  .board::before{
+    content:"";
+    position:absolute;
+    inset:10px;
+    border: 2px dashed rgba(217,138,6,0.45);
+    border-radius: 14px;
+    pointer-events:none;
+  }
+
+  .board h1{
+    font-size:1.9rem;
+    color: var(--purple);
+    margin: 4px 0 4px;
+    text-align:center;
+  }
+  .board .updated{
+    text-align:center;
+    color:#7a6aa8;
+    font-weight:700;
+    margin-bottom: 26px;
+    font-size:0.95rem;
+  }
+
+  h2.section{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:1.25rem;
+    color: var(--purple);
+    margin: 34px 0 12px;
+    padding-bottom:6px;
+    border-bottom: 3px solid var(--gold);
+  }
+  h2.section.green{ border-bottom-color: var(--green); }
+  h2.section .dot{ font-size:1.15rem; }
+
+  p, li{
+    line-height:1.65;
+    font-size:1.02rem;
+    color: #34285e;
+  }
+  ul{ padding-left: 22px; }
+  li{ margin-bottom:8px; }
+  li::marker{ color: var(--gold-deep); }
+  .tab-content.privacy li::marker{ color: var(--green); }
+
+  strong{ color: var(--purple); }
+
+  a{ color: var(--green-deep); font-weight:700; text-decoration: none; border-bottom: 2px dotted var(--green-deep); }
+  a:hover{ color: var(--red); border-bottom-color: var(--red); }
+
+  .callout{
+    background: #fff3cf;
+    border: 2px solid var(--gold);
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin: 18px 0;
+    font-size:0.98rem;
+  }
+  .callout.green{ border-color: var(--green); background:#e7f8ee; }
+
+  .badge-row{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin: 8px 0 20px;
+  }
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background: var(--night-2);
+    color: var(--gold-pale);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-weight:700;
+    font-size:0.9rem;
+  }
+
+  table.data{
+    width:100%;
+    border-collapse: collapse;
+    margin: 12px 0 18px;
+    font-size:0.97rem;
+  }
+  table.data th, table.data td{
+    text-align:left;
+    vertical-align:top;
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(75,42,154,0.18);
+    color:#34285e;
+  }
+  table.data th{
+    background: var(--night-2);
+    color: var(--gold-pale);
+  }
+  table.data tr:nth-child(even) td{ background: rgba(247,181,30,0.08); }
+
+  footer{
+    text-align:center;
+    padding: 10px 20px 50px;
+    color: var(--gold-pale);
+    font-weight:700;
+    font-size:0.9rem;
+  }
+  footer .die{ font-size:1.2rem; }
+
+  .tab-content{ display:none; }
+  .tab-content.active{ display:block; }
+
+  @media (max-width:600px){
+    .board{ padding: 26px 18px 34px; }
+    .tab-btn{ padding:10px 18px; font-size:0.95rem;}
+    table.data th, table.data td{ padding: 8px 6px; font-size:0.9rem; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <img src="Banner.png" alt="Bangla Ludu logo">
+    <p class="tag">🎲 The Rules of the Board 🎲</p>
+  </div>
+
+  <div class="track"></div>
+
+  <div class="tabs">
+    <button class="tab-btn active" id="btn-terms" onclick="showTab('terms')">📜 Terms & Conditions</button>
+    <button class="tab-btn privacy" id="btn-privacy" onclick="showTab('privacy')">🔒 Privacy Policy</button>
+  </div>
+
+  <!-- ================= TERMS ================= -->
+  <div class="board tab-content active" id="terms">
+    <h1>🎲 Terms &amp; Conditions</h1>
+    <p class="updated">Last updated: November 14, 2026</p>
+
+    <div class="badge-row">
+      <span class="badge">🎲 Bangla Ludu</span>
+      <span class="badge">📱 Mobile Game</span>
+      <span class="badge">🌐 Online Multiplayer</span>
+    </div>
+
+    <p>Welcome to the board! Before you roll your first six, please read these Terms &amp; Conditions ("Terms"). By downloading, installing, or playing <strong>Bangla Ludu</strong> (the "Game"), you agree to them. If you don't agree, please don't use the Game.</p>
+
+    <h2 class="section"><span class="dot">🔴</span> 1. Using the Game</h2>
+    <ul>
+      <li>You must be old enough to legally agree to these Terms in your country, or have a parent or guardian's permission.</li>
+      <li>The Game is for your personal, non-commercial entertainment. Don't reverse-engineer, copy, redistribute, or modify the Game or its servers.</li>
+      <li>We may update, patch, or change the Game at any time — new boards, new tokens, new modes, or fixes.</li>
+    </ul>
+
+    <h2 class="section"><span class="dot">🟢</span> 2. Your Account</h2>
+    <ul>
+      <li>You can play as a <strong>guest</strong>, or sign in with an <strong>e-mail address</strong> or your <strong>Google account</strong>.</li>
+      <li>A guest account is tied to your device. If you uninstall the Game or change devices without signing in with e-mail or Google, your progress may be lost.</li>
+      <li>You are responsible for keeping your login details safe. Choose a player name that is not offensive, misleading, or someone else's.</li>
+    </ul>
+
+    <h2 class="section"><span class="dot">🟡</span> 3. Coins, Items &amp; In-App Purchases</h2>
+    <p>The Game uses virtual <strong>coins</strong> and virtual items (avatars, boards, token skins, chat and emoji packs). You can earn coins by playing, from daily rewards, the fortune wheel and missions, or by watching optional reward videos, and you can buy coin packs through <strong>Google Play</strong> (using Unity In-App Purchasing).</p>
+    <ul>
+      <li>Coins and items are virtual and have <strong>no real-world value</strong>. They cannot be exchanged for real money, cashed out, sold, or transferred outside the Game.</li>
+      <li>Coins used as an entry fee for a match, and coins won from a match, are part of the game only. <strong>Bangla Ludu offers no real-money gambling.</strong></li>
+      <li>Purchases are processed by Google Play under its payment terms. Purchases are generally final; refunds follow Google Play's policies.</li>
+      <li>Items you "try" by watching a video are lent for a limited number of games and then return to the shop.</li>
+    </ul>
+
+    <div class="callout">
+      💡 <strong>Tip:</strong> If a purchase was charged but your coins did not arrive, restart the Game while online — the purchase is checked again automatically. If that doesn't help, contact us with your order number.
+    </div>
+
+    <h2 class="section"><span class="dot">🔵</span> 4. Advertising</h2>
+    <p>The Game shows ads through <strong>Google AdMob</strong> to stay free to play, including optional reward videos. Depending on your region and choices in the consent message, ads may be personalized using your device's advertising identifier.</p>
+
+    <h2 class="section"><span class="dot">🔴</span> 5. Playing Fair &amp; Being Kind</h2>
+    <ul>
+      <li>Don't cheat, hack, exploit bugs, use automation or modified versions of the Game, or interfere with the game servers.</li>
+      <li>Don't harass, threaten, or abuse other players through names, chat, or friend requests.</li>
+      <li>We may reset coins or items gained by cheating, and suspend or delete accounts that break these rules.</li>
+    </ul>
+
+    <h2 class="section"><span class="dot">🟢</span> 6. Online Service</h2>
+    <p>Online matches, friends, leagues and your saved progress need our game server and an internet connection. We try to keep the service running all the time, but we can't promise it will always be available, and we may change or end online features.</p>
+
+    <h2 class="section"><span class="dot">🟡</span> 7. Disclaimer &amp; Limitation of Liability</h2>
+    <p>The Game is provided "as is" without warranties of any kind. To the maximum extent permitted by law, we are not liable for indirect, incidental, or consequential damages from your use of the Game, including lost progress, coins, or virtual items.</p>
+
+    <h2 class="section"><span class="dot">🔵</span> 8. Changes to These Terms</h2>
+    <p>We may update these Terms from time to time. Continuing to play after changes are posted means you accept the updated Terms.</p>
+
+    <h2 class="section"><span class="dot">🔴</span> 9. Contact Us</h2>
+    <p>Questions about these Terms? Reach out to:</p>
+    <div class="callout">
+      <strong>Developer:</strong> Shahariar Chowdhory, Automata Studios<br>
+      <strong>Email:</strong> <a href="mailto:contact.automatastudios@gmail.com">contact.automatastudios@gmail.com</a><br>
+      <strong>Google Play Developer Page:</strong> <a href="https://play.google.com/store/apps/dev?id=7177646858487969160&hl=en" target="_blank" rel="noopener">View on Google Play</a>
+    </div>
+  </div>
+
+  <!-- ================= PRIVACY ================= -->
+  <div class="board tab-content privacy" id="privacy">
+    <h1>🔒 Privacy Policy</h1>
+    <p class="updated">Last updated: November 14, 2026</p>
+
+    <div class="badge-row">
+      <span class="badge">🔒 Your Data</span>
+      <span class="badge">🎲 Bangla Ludu</span>
+    </div>
+
+    <p>This Privacy Policy explains what information <strong>Bangla Ludu</strong> (the "Game") collects, why, who it is shared with, and how you can have it deleted. We collect only what the Game needs to work — saving your progress, matching you with other players, and keeping it free with ads.</p>
+
+    <h2 class="section green"><span class="dot">🟢</span> 1. Information We Collect</h2>
+    <table class="data">
+      <tr><th>What</th><th>When</th><th>Why</th></tr>
+      <tr><td><strong>Device identifier</strong></td><td>When you play as a guest</td><td>To create your guest account and log you back in on the same device.</td></tr>
+      <tr><td><strong>E-mail address</strong></td><td>When you sign up or log in with e-mail (through Google Firebase Authentication)</td><td>To create and secure your account and to send password-reset e-mails you ask for. Your password is handled by Firebase; we never see or store it.</td></tr>
+      <tr><td><strong>Google account name, e-mail and profile picture</strong></td><td>When you sign in with Google (through Google Firebase Authentication)</td><td>To log you in and to show your name and picture in the Game.</td></tr>
+      <tr><td><strong>Player profile and game data</strong></td><td>While you play</td><td>Your player name, chosen avatar, coins, owned items, level and XP, wins and other statistics, daily rewards and missions, league division and weekly wins, friends, friend requests and recently-played players — to save your progress and run the Game's features.</td></tr>
+      <tr><td><strong>Match data and chat</strong></td><td>During online matches</td><td>Moves, emojis and chat messages are passed between the players in the match so the game can be played. Chat messages are relayed to the other players and are not stored by us.</td></tr>
+      <tr><td><strong>Purchase information</strong></td><td>When you buy a coin pack</td><td>Google Play's signed receipt (order and purchase token) is checked by our server so the coins are paid once and purchases can't be faked. We never receive your card or payment details.</td></tr>
+      <tr><td><strong>Advertising ID and device information</strong></td><td>When ads are shown</td><td>Collected by Google AdMob to show and measure ads (see section 3).</td></tr>
+    </table>
+
+    <h2 class="section green"><span class="dot">🟡</span> 2. What Other Players Can See</h2>
+    <ul>
+      <li>Your <strong>player name, avatar, level</strong> and <strong>game statistics</strong> are shown to other players in matches, in player profiles and on league leaderboards.</li>
+      <li>Your <strong>friends</strong> can see whether you are online or in a game.</li>
+      <li>Your e-mail address is <strong>never</strong> shown to other players.</li>
+    </ul>
+
+    <h2 class="section green"><span class="dot">🔵</span> 3. Google AdMob</h2>
+    <p>We use <strong>Google AdMob</strong> to show ads, including optional reward videos. Google may collect and use your advertising identifier and general device information to serve and measure ads, including personalized ads where you allow them. Where required (for example in the EEA and UK), the Game shows Google's consent message so you can choose.</p>
+    <div class="callout green">
+      🔎 Learn how Google uses this data, and manage ad personalization, at <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google's Ads Policy page</a>. You can also reset or delete your advertising ID in your device settings.
+    </div>
+
+    <h2 class="section green"><span class="dot">🔴</span> 4. Google Firebase Authentication</h2>
+    <p>E-mail and Google sign-in are handled by <strong>Google Firebase Authentication</strong>. Firebase stores your sign-in details (such as your e-mail address) to let you log in securely. See <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase's privacy information</a>.</p>
+
+    <h2 class="section green"><span class="dot">🟢</span> 5. In-App Purchases</h2>
+    <p>Coin packs are bought through <strong>Google Play</strong> using <strong>Unity In-App Purchasing</strong>. Google Play handles the payment; Unity's purchasing library passes the purchase details between Google Play and the Game. Our server keeps the purchase token and the coin pack bought, to prevent the same purchase being used twice.</p>
+
+    <h2 class="section green"><span class="dot">🟡</span> 6. Notifications</h2>
+    <p>If you allow notifications, the Game shows reminders (such as "your free spin is ready") that are scheduled on your phone. No personal data is sent to us for these reminders, and you can turn them off in the Game's settings or your phone's settings.</p>
+
+    <h2 class="section green"><span class="dot">🔵</span> 7. How We Use Information</h2>
+    <ul>
+      <li>To create your account, save your progress, and let you continue on another device.</li>
+      <li>To run online matches, private rooms, friends, leagues and leaderboards.</li>
+      <li>To process and verify in-app purchases and reward videos, and to prevent cheating and fraud.</li>
+      <li>To show ads and keep the Game free.</li>
+      <li>To fix problems and improve the Game.</li>
+    </ul>
+    <p>We do <strong>not sell</strong> your personal information.</p>
+
+    <h2 class="section green"><span class="dot">🔴</span> 8. Data Sharing</h2>
+    <p>We share data only with the services that make the Game work: <strong>Google</strong> (AdMob ads, Firebase sign-in, Google Play purchases) and <strong>Unity</strong> (in-app purchasing library), as described above, and with other players only as described in section 2. We may also disclose information if required by law.</p>
+
+    <h2 class="section green"><span class="dot">🟢</span> 9. Storage, Security &amp; Retention</h2>
+    <ul>
+      <li>Your account and game data are stored on the game server operated by Automata Studios, and travel between the Game and the server over the internet.</li>
+      <li>We keep your data while your account exists. Backups made to protect against data loss are kept for a limited time and then removed.</li>
+      <li>No method of storage or transfer is 100% secure, but we take reasonable steps to protect your data.</li>
+    </ul>
+
+    <h2 class="section green"><span class="dot">🟡</span> 10. Deleting Your Account &amp; Data</h2>
+    <p>You can ask us to delete your account and all data linked to it at any time:</p>
+    <ol>
+      <li>Send an e-mail to <a href="mailto:contact.automatastudios@gmail.com?subject=Bangla%20Ludu%20account%20deletion">contact.automatastudios@gmail.com</a> with the subject <strong>"Bangla Ludu account deletion"</strong>.</li>
+      <li>Include your <strong>player name</strong> and your <strong>player ID</strong> (shown in the Game under Settings → Account), or the e-mail address you sign in with.</li>
+      <li>We delete your account, coins, items, statistics, friends and league data within <strong>30 days</strong> and confirm by e-mail. Purchase records may be kept where the law requires it.</li>
+    </ol>
+    <p>You can also ask us for a copy of your data, or to correct it, the same way.</p>
+
+    <h2 class="section green"><span class="dot">🔵</span> 11. Children's Privacy</h2>
+    <p>Bangla Ludu is made for a general audience and is not directed at children under 13. We do not knowingly collect personal information from children under 13 (or the age of digital consent in your country) without parental consent. If you believe a child has given us personal information, contact us and we will delete it.</p>
+
+    <h2 class="section green"><span class="dot">🔴</span> 12. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Changes are posted on this page with a new "Last updated" date.</p>
+
+    <h2 class="section green"><span class="dot">🟢</span> 13. Contact Us</h2>
+    <p>For questions, concerns, or requests about this Privacy Policy or your data, reach out to:</p>
+    <div class="callout green">
+      <strong>Developer:</strong> Shahariar Chowdhory, Automata Studios<br>
+      <strong>Email:</strong> <a href="mailto:contact.automatastudios@gmail.com">contact.automatastudios@gmail.com</a><br>
+      <strong>Google Play Developer Page:</strong> <a href="https://play.google.com/store/apps/dev?id=7177646858487969160&hl=en" target="_blank" rel="noopener">View on Google Play</a>
+    </div>
+  </div>
+
+  <footer>
+    <span class="die">🎲</span> Bangla Ludu &copy; 2026 Automata Studios. All rights reserved. <span class="die">🎲</span>
+  </footer>
+
+<script>
+function showTab(name){
+  document.querySelectorAll('.tab-content').forEach(el=>el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el=>el.classList.remove('active'));
+  document.getElementById(name).classList.add('active');
+  document.getElementById('btn-'+name).classList.add('active');
+}
+// a link straight to the privacy part: privacy_policy.html#privacy
+if (location.hash === '#privacy') showTab('privacy');
+</script>
+
+</body>
+</html>
