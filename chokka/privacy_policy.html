@@ -334,6 +334,8 @@
       <tr><td><strong>Match data and chat</strong></td><td>During online matches</td><td>Moves, emojis and chat messages are passed between the players in the match so the game can be played. Chat messages are relayed to the other players and are not stored by us.</td></tr>
       <tr><td><strong>Purchase information</strong></td><td>When you buy a coin pack</td><td>Google Play's signed receipt (order and purchase token) is checked by our server so the coins are paid once and purchases can't be faked. We never receive your card or payment details.</td></tr>
       <tr><td><strong>Advertising ID and device information</strong></td><td>When ads are shown</td><td>Collected by Google AdMob to show and measure ads (see section 3).</td></tr>
+      <tr><td><strong>Usage statistics</strong></td><td>While you use the Game (through Google Firebase Analytics)</td><td>Which screens you open and what you do in the Game (for example games started and finished, rewards collected, items bought or tried, videos watched, reminders opened), your game language and level, and general device information (phone model, Android version, country and approximate region from your IP address) — to understand how the Game is played and improve it (see section 4).</td></tr>
+      <tr><td><strong>Crash reports</strong></td><td>When the Game crashes or hits an error (through Google Firebase Crashlytics)</td><td>Technical details of the problem (where in the Game it happened, phone model, Android version, free memory) — to find and fix bugs (see section 4).</td></tr>
     </table>
 
     <h2 class="section green"><span class="dot">🟡</span> 2. What Other Players Can See</h2>
@@ -349,14 +351,17 @@
       🔎 Learn how Google uses this data, and manage ad personalization, at <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google's Ads Policy page</a>. You can also reset or delete your advertising ID in your device settings.
     </div>
 
-    <h2 class="section green"><span class="dot">🔴</span> 4. Google Firebase Authentication</h2>
-    <p>E-mail and Google sign-in are handled by <strong>Google Firebase Authentication</strong>. Firebase stores your sign-in details (such as your e-mail address) to let you log in securely. See <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase's privacy information</a>.</p>
+    <h2 class="section green"><span class="dot">🔴</span> 4. Google Firebase</h2>
+    <p><strong>Sign-in (Firebase Authentication):</strong> e-mail and Google sign-in are handled by Google Firebase Authentication. Firebase stores your sign-in details (such as your e-mail address) to let you log in securely.</p>
+    <p><strong>Statistics (Firebase Analytics):</strong> the Game reports how it is used (see "Usage statistics" in section 1) to Google Firebase Analytics, so we can see, for example, how many people play each day, where new players get stuck, and which features are used. These statistics are linked only to an app-instance identifier and to your <strong>player ID</strong> (the Game's own number for your account) — never to your name, e-mail address or chat messages. We look at them mostly as totals.</p>
+    <p><strong>Crash reports (Firebase Crashlytics):</strong> when the Game crashes or hits an error, a technical report is sent to Google Firebase Crashlytics, with your player ID so we can tell whether one player has the same problem again.</p>
+    <p>Google processes this data for us under its terms, and keeps analytics data only for a limited time (at most 14 months). See <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase's privacy information</a>.</p>
 
     <h2 class="section green"><span class="dot">🟢</span> 5. In-App Purchases</h2>
     <p>Coin packs are bought through <strong>Google Play</strong> using <strong>Unity In-App Purchasing</strong>. Google Play handles the payment; Unity's purchasing library passes the purchase details between Google Play and the Game. Our server keeps the purchase token and the coin pack bought, to prevent the same purchase being used twice.</p>
 
     <h2 class="section green"><span class="dot">🟡</span> 6. Notifications</h2>
-    <p>If you allow notifications, the Game shows reminders (such as "your free spin is ready") that are scheduled on your phone. No personal data is sent to us for these reminders, and you can turn them off in the Game's settings or your phone's settings.</p>
+    <p>If you allow notifications, the Game shows reminders (such as "your free spin is ready") that are scheduled on your phone. The reminders themselves send no personal data; if you open the Game from one, that is counted in the usage statistics (section 4). You can turn them off in the Game's settings or your phone's settings.</p>
 
     <h2 class="section green"><span class="dot">🔵</span> 7. How We Use Information</h2>
     <ul>
@@ -364,12 +369,12 @@
       <li>To run online matches, private rooms, friends, leagues and leaderboards.</li>
       <li>To process and verify in-app purchases and reward videos, and to prevent cheating and fraud.</li>
       <li>To show ads and keep the Game free.</li>
-      <li>To fix problems and improve the Game.</li>
+      <li>To fix problems and crashes, and to improve the Game using usage statistics.</li>
     </ul>
     <p>We do <strong>not sell</strong> your personal information.</p>
 
     <h2 class="section green"><span class="dot">🔴</span> 8. Data Sharing</h2>
-    <p>We share data only with the services that make the Game work: <strong>Google</strong> (AdMob ads, Firebase sign-in, Google Play purchases) and <strong>Unity</strong> (in-app purchasing library), as described above, and with other players only as described in section 2. We may also disclose information if required by law.</p>
+    <p>We share data only with the services that make the Game work: <strong>Google</strong> (AdMob ads, Firebase sign-in, Firebase Analytics statistics and Crashlytics crash reports, Google Play purchases) and <strong>Unity</strong> (in-app purchasing library), as described above, and with other players only as described in section 2. We may also disclose information if required by law.</p>
 
     <h2 class="section green"><span class="dot">🟢</span> 9. Storage, Security &amp; Retention</h2>
     <ul>
@@ -387,6 +392,7 @@
       <li>Include your <strong>player name</strong> and your <strong>player ID</strong> (shown in the Game under Settings → Account), or the e-mail address you sign in with.</li>
       <li>We delete your account and all linked data within <strong>15 days</strong> and confirm by e-mail.</li>
     </ol>
+    <p>Usage statistics and crash reports linked to your player ID are deleted by Google when their retention time ends; if you ask us by e-mail, we also ask Google to delete them sooner.</p>
     <p>Purchase receipts (the store's order token, without any link to your account) may be kept so the same purchase cannot be used twice, and where the law requires it. You can also ask us for a copy of your data, or to correct it, by e-mail.</p>
 
     <h2 class="section green"><span class="dot">🔵</span> 11. Children's Privacy</h2>
